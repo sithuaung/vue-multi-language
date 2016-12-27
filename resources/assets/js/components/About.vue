@@ -1,12 +1,17 @@
 <template>
-    <div>
-        <h3>This is ABOUT page.</h3>
-        <p>Hi, this is about page. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, exercitationem! Minima perspiciatis voluptate, suscipit vel voluptates dolorum omnis laborum officiis nam, iure fuga, molestias consectetur quasi aliquid esse assumenda! Obcaecati.</p>
+    <div class="container">
+        <navbar></navbar>
+
+        <h3>{{ $t('about_page.description') }}</h3>
     </div>
 </template>
 
 <script>
+    import Navbar from './Navbar.vue';
+
     export default {
-        name: 'about'
+        name: 'about',
+
+        components: { Navbar }
     }
 </script>

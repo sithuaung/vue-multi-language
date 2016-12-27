@@ -1,30 +1,54 @@
-// we will import vue.
 import Vue from 'vue';
-// will import vue router.
 import Router from 'vue-router';
-// will import vuex.
 import Vuex from 'vuex';
-// will import axios.
-import axios from 'axios';
+import axios from 'axios';          
+import VueI18n from 'vue-i18n';
+import NProgress from 'nprogress'
+
 
 // will inject vuex store
 import store from './store';
+
 // will required default Home.vue and About.vue component.
 import Home from './components/Home.vue';
 import About from './components/About.vue';
 
-// Now vue will use vue router.
 Vue.use(Router);
-// vue will use vuex store.
 Vue.use(Vuex);
-// we don't use vue-router. but with this code, 
+Vue.use(VueI18n);
+
+Vue.config.debug = true;
+Vue.config.lang = 'en';
+Vue.config.fallbackLang = 'en'
+
+// ready translated locales like ui locales.
+import uiLocale from './lang/ui';
+var locales = uiLocale;
+
+// set locales
+Object.keys(locales).forEach(function (lang) {
+    Vue.locale(lang, locales[lang])
+});
+
+/**
+ * Multi language need to cange in real time.
+ */
+Vue.prototype.$locale = {
+    change(lang) {
+        Vue.config.lang = lang
+    },
+    current() {
+        return Vue.config.lang
+    }
+}
+
 // we can use this.$http.get() inside components.
 Vue.prototype.$http = axios;
 
 // this is routes. For now, there's only one Home route.
 const routes = [
-    { path: '/', component: Home },
-    { path: '/about', component: About }
+    { path: '/', name: 'home', component: Home },
+    { path: '/about', name: 'about', component: About }
 ]
 
 // this is creating new router.
