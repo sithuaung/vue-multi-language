@@ -6,7 +6,6 @@ Vue.use(Vuex)
 // root state object.
 // each Vuex instance is just a single state tree.
 const state = {
-  count: 0,
   locale: 'en'
 }
 
@@ -16,12 +15,6 @@ const state = {
 // mutations must be synchronous and can be recorded by plugins
 // for debugging purposes.
 const mutations = {
-    increment(state) {
-        state.count++
-    },
-    decrement(state) {
-        state.count--
-    },
     SET_LOCALE(state, locale) {
         state.locale = locale;
     }
@@ -30,9 +23,6 @@ const mutations = {
 // actions are functions that causes side effects and can involve
 // asynchronous operations.
 const actions = {
-    increment: ({ commit }) => commit('increment'),
-    decrement: ({ commit }) => commit('decrement'),
-    // set_locale: ({ commit }) => commit('SET_LOCALE'),
     set_locale ({ commit, state }, locale) {
         commit('SET_LOCALE', locale);
     }
@@ -40,7 +30,6 @@ const actions = {
 
 // getters are functions
 const getters = {
-  getCount: state => state.count,
   getLocale: state => state.locale,
 }
 

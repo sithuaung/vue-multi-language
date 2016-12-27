@@ -42,9 +42,11 @@
             this.getArticles(this.getLocale);
         },
 
-        computed: mapGetters([
-            'getLocale'
-        ]),
+        computed: {
+            ...mapGetters([
+                'getLocale'
+            ])
+        },
 
         methods: {
             ...mapActions([

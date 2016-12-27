@@ -3,14 +3,19 @@
 This is demo starting point application for tutorial purpose.
 
 ### Step.1
+install composer packages.
+```
+composer install
+```
+### Step.2
 install npm packages.
 ```
 yarn
 ```
-### Step.2
+### Step.3
 run gulp and compiled js assets files.
 ```
 gulp
 ```
-###Step.3
-serve the application and see the result.
+###Step.4
+add your credentials to .env file, serve the application and see the result.

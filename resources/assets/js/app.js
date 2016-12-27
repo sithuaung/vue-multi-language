@@ -3,8 +3,6 @@ import Router from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';          
 import VueI18n from 'vue-i18n';
-import NProgress from 'nprogress'
-
 
 // will inject vuex store
 import store from './store';
