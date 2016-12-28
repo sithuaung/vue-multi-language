@@ -1,21 +1,31 @@
-## Starting point SPA with laravel 5.3, vuejs2.0
+## Multi language with Laravel, Vuejs
 
-This is demo starting point application for tutorial purpose.
+This is demo app for multi language with vuejs, vuex, vue-router and laravel-translatable
 
-### Step.1
-install composer packages.
+#### install composer packages.
 ```
 composer install
 ```
-### Step.2
-install npm packages.
+---
+#### install npm packages.
 ```
-yarn
+yarn (or) npm install
 ```
-### Step.3
-run gulp and compiled js assets files.
+---
+#### .env file
+```
+// edit your .env file with your credentials.
+```
+---
+#### run gulp and compiled js assets files.
 ```
 gulp
 ```
-###Step.4
-add your credentials to .env file, serve the application and see the result.
+---
+#### migrate and seed
+```
+php artisan migrate
+php artisan db:seed
+```
+---
+#### see the result
